@@ -26,7 +26,9 @@ void LogViewer::update() {
 
 void LogViewer::render() {
     ImGui::BeginChild("##LogRegion", ImVec2(0, 0), false, ImGuiWindowFlags_HorizontalScrollbar);
-    
+
+    const bool wasAtBottom = autoScroll && (ImGui::GetScrollY() >= ImGui::GetScrollMaxY() - 1.0f);
+
     for (std::string log : logs) {
         if (log.find(":: info ::") != std::string::npos)
             ImGui::TextColored(ImVec4(0.9f, 0.9f, 0.9f, 1.0f), log.c_str());
@@ -42,9 +44,10 @@ void LogViewer::render() {
 
         else ImGui::TextColored(ImVec4(0.9f, 0.9f, 0.9f, 1.0f), log.c_str());
     }
- 
-    if (autoScroll && ImGui::GetScrollY() >= ImGui::GetScrollMaxY())
-        ImGui::SetScrollHereY(1.0f);
+
+    ImGui::Dummy(ImVec2(0.0f, ImGui::GetTextLineHeight() * 0.2f));
+
+    if (wasAtBottom) ImGui::SetScrollHereY(1.0f);
  
     ImGui::EndChild();
 }
