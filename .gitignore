@@ -1,0 +1,12 @@
+.vs/
+Debug/
+Release/
+x64/
+x86/
+build/
+*.vcxproj.user
+*.VC.db
+*.opendb
+*.suo
+*.user
+*.log
