@@ -1,10 +1,10 @@
 .vs/
 build/
-src/gui/logs/
-src/gui/conf/
 *.vcxproj.user
 *.VC.db
 *.opendb
 *.suo
 *.user
 *.log
+*.ini
+*.pdb
