@@ -182,9 +182,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
     ImGuiStyle& style = ImGui::GetStyle();
     style.ScaleAllSizes(main_scale);        
     style.FontScaleDpi = main_scale;       
-    io.IniFilename = "conf/bot_layout.ini";
-    io.ConfigDpiScaleFonts = true;         
-    io.ConfigDpiScaleViewports = true;      
+    io.IniFilename = "conf/bot_layout.ini";   
 
     //if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
     //    style.WindowRounding = 1.0f;
@@ -247,11 +245,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
         g_pd3dDeviceContext->OMSetRenderTargets(1, &g_mainRenderTargetView, nullptr);
         g_pd3dDeviceContext->ClearRenderTargetView(g_mainRenderTargetView, clear_color_with_alpha);
         ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-
-        if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
-            ImGui::UpdatePlatformWindows();
-            ImGui::RenderPlatformWindowsDefault();
-        }
 
         HRESULT hr = g_pSwapChain->Present(1, 0);
         g_SwapChainOccluded = (hr == DXGI_STATUS_OCCLUDED);

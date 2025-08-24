@@ -4,11 +4,9 @@ Container::Container() {
     window_flags |= ImGuiWindowFlags_NoResize;
     window_flags |= ImGuiWindowFlags_NoNav;
     window_flags |= ImGuiWindowFlags_NoCollapse;
-    window_flags |= ImGuiWindowFlags_NoDocking;
     window_flags |= ImGuiWindowFlags_NoTitleBar;
     window_flags |= ImGuiWindowFlags_NoSavedSettings;
     window_flags |= ImGuiWindowFlags_NoMove;
-
     tab_bar_flags |= ImGuiTabBarFlags_None;
 }
 

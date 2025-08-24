@@ -38,7 +38,7 @@ void LogViewer::render() {
             ImGui::TextColored(ImVec4(0.980f, 0.153f, 0.153f, 1.0f), log.c_str());
 
         else if (log.find(":: debug ::") != std::string::npos)
-            ImGui::TextColored(ImVec4(0.7f, 0.85, 1.0f, 1.0f), log.c_str());
+            ImGui::TextColored(ImVec4(0.7f, 0.85f, 1.0f, 1.0f), log.c_str());
 
         else ImGui::TextColored(ImVec4(0.9f, 0.9f, 0.9f, 1.0f), log.c_str());
     }

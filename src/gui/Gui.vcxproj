@@ -61,21 +61,21 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)build\bin\$(Platform)-$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\obj\$(Platform)-$(Configuration)\</IntDir>
-    <TargetName>P4-Bot</TargetName>
+    <TargetName>4SBot</TargetName>
     <IncludePath>$(SolutionDir)lib\;$(SolutionDir)lib\common\;$(SolutionDir)lib\imgui\;$(SolutionDir)lib\imgui\backends\;$(ProjectDir);$(ProjectDir)layout\;$(ProjectDir)layout\farm-spot-tab\;$(ProjectDir)layout\character-tab\;$(ProjectDir)layout\character-tab\warriorKeybindsContainer\;$(ProjectDir)layout\character-tab\mageKeybindsContainer\;$(ProjectDir)layout\info-tab\;$(ProjectDir)layout\info-tab\log-viewer\;$(ProjectDir)layout\settings-tab\;$(ProjectDir)layout\help-tab\;$(ProjectDir)resource\;$(SolutionDir)src\injector\;$(SolutionDir)src\injector\header\;$(SolutionDir)src\spdlog\out\install\x64-Debug\include\;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)src\spdlog\out\install\x64-Debug\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Develop|x64'">
     <OutDir>$(SolutionDir)build\bin\$(Platform)-$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\obj\$(Platform)-$(Configuration)\</IntDir>
-    <TargetName>P4-Bot</TargetName>
+    <TargetName>4SBot</TargetName>
     <IncludePath>$(SolutionDir)lib\;$(SolutionDir)lib\common\;$(SolutionDir)lib\imgui\;$(SolutionDir)lib\imgui\backends\;$(ProjectDir);$(ProjectDir)layout\;$(ProjectDir)layout\farm-spot-tab\;$(ProjectDir)layout\character-tab\;$(ProjectDir)layout\character-tab\warriorKeybindsContainer\;$(ProjectDir)layout\character-tab\mageKeybindsContainer\;$(ProjectDir)layout\info-tab\;$(ProjectDir)layout\info-tab\log-viewer\;$(ProjectDir)layout\settings-tab\;$(ProjectDir)layout\help-tab\;$(ProjectDir)resource\;$(SolutionDir)src\injector\;$(SolutionDir)src\injector\header\;$(SolutionDir)src\spdlog\out\install\x64-Debug\include\;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)src\spdlog\out\install\x64-Debug\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)build\bin\$(Platform)-$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\obj\$(Platform)-$(Configuration)\</IntDir>
-    <TargetName>P4-Bot</TargetName>
+    <TargetName>4SBot</TargetName>
     <IncludePath>$(SolutionDir)lib\;$(SolutionDir)lib\common\;$(SolutionDir)lib\imgui\;$(SolutionDir)lib\imgui\backends\;$(ProjectDir);$(ProjectDir)layout\;$(ProjectDir)layout\farm-spot-tab\;$(ProjectDir)layout\character-tab\;$(ProjectDir)layout\character-tab\warriorKeybindsContainer\;$(ProjectDir)layout\character-tab\mageKeybindsContainer\;$(ProjectDir)layout\info-tab\;$(ProjectDir)layout\info-tab\log-viewer\;$(ProjectDir)layout\settings-tab\;$(ProjectDir)layout\help-tab\;$(ProjectDir)resource\;$(SolutionDir)src\injector\;$(SolutionDir)src\injector\header\;$(SolutionDir)src\spdlog\out\install\x64-Debug\include\;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)src\spdlog\out\install\x64-Debug\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -87,6 +87,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -106,6 +107,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ProgramDataBaseFileName />
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -126,6 +128,7 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ProgramDataBaseFileName />
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -160,8 +163,8 @@
     <ClInclude Include="resource\resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\imgui\ImGui.vcxproj">
-      <Project>{f99a5680-47cc-43e8-bb80-f32674445736}</Project>
+    <ProjectReference Include="..\imgui\imgui.vcxproj">
+      <Project>{ff4e23d9-ddcb-49d4-b5ba-f0e77f8b28ac}</Project>
     </ProjectReference>
     <ProjectReference Include="..\injector\injector.vcxproj">
       <Project>{101db463-0df6-408c-bfc2-ee5fd6c21d62}</Project>
