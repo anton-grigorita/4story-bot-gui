@@ -1,8 +1,4 @@
 .vs/
-Debug/
-Release/
-x64/
-x86/
 build/
 src/gui/logs/
 src/gui/conf/
