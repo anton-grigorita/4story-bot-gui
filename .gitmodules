@@ -1,5 +1,5 @@
-[submodule "src/spdlog"]
-	path = src/spdlog
+[submodule "lib/spdlog"]
+	path = lib/spdlog
 	url = https://github.com/gabime/spdlog.git
 [submodule "lib/imgui"]
 	path = lib/imgui

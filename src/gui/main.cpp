@@ -121,7 +121,7 @@ void init_gui_logger() {
     auto logger = spdlog::daily_logger_mt<spdlog::async_factory>("logger", "logs/execution.log");
 
     logger->set_pattern("%C-%m-%d %H:%M :: %l :: %v");
-    logger->set_level(spdlog::level::debug);
+    logger->set_level(spdlog::level::info);
     logger->flush_on(spdlog::level::err);
     spdlog::set_default_logger(logger);
     spdlog::flush_every(std::chrono::seconds{ 1 });
