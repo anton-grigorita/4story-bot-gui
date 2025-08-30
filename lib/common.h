@@ -4,7 +4,7 @@
 #include <ctime>
 #include <iomanip>
 #include <sstream>
-#include "SimpleIni.h"
+#include "simpleini.h"
 #include "imgui.h"
 
 inline const char* fileName = "conf/bot_conf.ini";
