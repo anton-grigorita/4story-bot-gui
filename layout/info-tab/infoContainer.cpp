@@ -13,22 +13,20 @@ InfoContainer::InfoContainer() {
 void InfoContainer::startBot() {
     spdlog::info("bot start");
 
-    // inject dll
     Injector injector("TClient.exe", "p4story.dll");
     
     if (injector.inject()) {
         spdlog::info("dll succesfuly injected");
 
-        // start timer
         isRunning = true;
         isPaused = false;
         elapsedTime = std::chrono::seconds(0);
         startTime = std::chrono::steady_clock::now();
 
+        if (!injector.callRemoteExport("init_entry")) spdlog::error("error on dll function call init");
     }
     else spdlog::error("error on dll injection");
 
-    // call method run
 }
 
 void InfoContainer::pauseBot() {
@@ -36,8 +34,10 @@ void InfoContainer::pauseBot() {
         isPaused = true;
         pauseTime = std::chrono::steady_clock::now();
         elapsedTime += std::chrono::duration_cast<std::chrono::seconds>(pauseTime - startTime);
+        Injector injector("TClient.exe", "p4story.dll");
 
-        spdlog::warn("bot pause");
+        spdlog::warn("bot pausing");
+        if (!injector.callRemoteExport("pause_entry")) spdlog::error("error on dll function call pause");
     }
 }
 
@@ -45,8 +45,10 @@ void InfoContainer::resumeBot() {
     if (isRunning && isPaused) {
         isPaused = false;
         startTime = std::chrono::steady_clock::now();
+        Injector injector("TClient.exe", "p4story.dll");
 
-        spdlog::warn("bot resume");
+        spdlog::warn("bot resuming");
+        if (!injector.callRemoteExport("pause_entry")) spdlog::error("error on dll function call resume");
     }
 }
 
@@ -57,9 +59,9 @@ void InfoContainer::stopBot() {
 
     // eject dll
     Injector injector("TClient.exe", "p4story.dll");
-
-    if (injector.eject()) spdlog::info("dll succesfuly ejected");
-    else spdlog::error("error on dll ejection");
+    
+    if (!injector.callRemoteExport("stop_entry")) spdlog::error("error on dll function call stop");
+    else spdlog::info("dll succesfuly ejected");
 }
 
 std::string InfoContainer::formatElapsedTime() {
