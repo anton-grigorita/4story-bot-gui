@@ -14,7 +14,7 @@ void InfoContainer::startBot() {
     spdlog::info("bot start");
 
     Injector injector("TClient.exe", "p4story.dll");
-    
+
     if (injector.inject()) {
         spdlog::info("dll succesfuly injected");
 
@@ -59,7 +59,7 @@ void InfoContainer::stopBot() {
 
     // eject dll
     Injector injector("TClient.exe", "p4story.dll");
-    
+
     if (!injector.callRemoteExport("stop_entry")) spdlog::error("error on dll function call stop");
     else spdlog::info("dll succesfuly ejected");
 }
@@ -114,7 +114,7 @@ void InfoContainer::render() {
             if (ImGui::Button("Resume")) resumeBot();
         }
     }
-    
+
     ImGui::SameLine();
 
     if (!isRunning) {

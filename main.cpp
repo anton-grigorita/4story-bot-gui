@@ -172,7 +172,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGuiIO& io = ImGui::GetIO(); (void)io; 
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
     //io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
     //io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
     ImGui::StyleColorsDark();
@@ -180,9 +180,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
     ImFont* font = io.Fonts->AddFontFromFileTTF("C:/Windows/Fonts/verdana.ttf", 18.0f);
 
     ImGuiStyle& style = ImGui::GetStyle();
-    style.ScaleAllSizes(main_scale);        
-    style.FontScaleDpi = main_scale;       
-    io.IniFilename = "conf/bot_layout.ini";   
+    style.ScaleAllSizes(main_scale);
+    style.FontScaleDpi = main_scale;
+    io.IniFilename = "conf/bot_layout.ini";
 
     //if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
     //    style.WindowRounding = 1.0f;
@@ -230,7 +230,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
 
         if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);
-        
+
         if (show_main_window)
             appBot.render();
 
@@ -287,7 +287,7 @@ bool CreateDeviceD3D(HWND hWnd) {
     HRESULT res = D3D11CreateDeviceAndSwapChain(nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr, createDeviceFlags, featureLevelArray, 2, D3D11_SDK_VERSION, &sd, &g_pSwapChain, &g_pd3dDevice, &featureLevel, &g_pd3dDeviceContext);
     if (res == DXGI_ERROR_UNSUPPORTED)
         res = D3D11CreateDeviceAndSwapChain(nullptr, D3D_DRIVER_TYPE_WARP, nullptr, createDeviceFlags, featureLevelArray, 2, D3D11_SDK_VERSION, &sd, &g_pSwapChain, &g_pd3dDevice, &featureLevel, &g_pd3dDeviceContext);
-    
+
     if (res != S_OK)
         return false;
 
