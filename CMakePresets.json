@@ -1,63 +1,19 @@
 {
   "version": 6,
-  "cmakeMinimumRequired": {
-    "major": 3,
-    "minor": 23,
-    "patch": 0
-  },
+  "cmakeMinimumRequired": { "major": 3, "minor": 23, "patch": 0 },
   "configurePresets": [
-    {
-      "name": "base",
-      "displayName": "base configuration",
-      "generator": "Visual Studio 17 2022",
-      "architecture": {
-        "value": "x64",
-        "strategy": "set"
-      },
-      "binaryDir": "${sourceDir}/build/${presetName}",
-      "cacheVariables": {
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}"
-      }
-    },
-    {
-      "name": "Debug",
-      "displayName": "Debug",
-      "inherits": "base",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
-      }
-    },
     {
       "name": "Release",
       "displayName": "Release",
-      "inherits": "base",
+      "generator": "Visual Studio 17 2022",
+      "architecture": { "value": "x64", "strategy": "set" },
+      "binaryDir": "${sourceDir}/build/Release",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/Release"
       }
     }
   ],
   "buildPresets": [
-    {
-      "name": "Debug",
-      "configurePreset": "Debug",
-      "configuration": "Debug",
-      "cleanFirst": true
-    },
-    {
-      "name": "Release",
-      "configurePreset": "Release",
-      "configuration": "Release",
-      "cleanFirst": true
-    }
-  ],
-  "testPresets": [
-    {
-      "name": "Debug",
-      "configurePreset": "Debug"
-    },
-    {
-      "name": "Release",
-      "configurePreset": "Release"
-    }
+    { "name": "Release", "configurePreset": "Release", "configuration": "Release", "cleanFirst": true }
   ]
 }
